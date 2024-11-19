@@ -21,14 +21,14 @@ function getUsers(){
     
     let html=''
 
-    fetch('http://localhost:4999/api/members', {mode: 'cors'})
+    fetch('https://api.sampleapis.com/beers/ale', {mode: 'cors'})
     .then((response)=>{
         console.log(response)
         return response.json();
     }) 
     .then((data)=>{
         data.forEach((element)=>{
-            html += `<li> ${element.first_name} ${element.last_name} </li>`
+            html += `<li> ${element.price} ${element.name} </li>`
         })
         content.innerHTML = html
     })
